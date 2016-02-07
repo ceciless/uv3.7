@@ -1,0 +1,12 @@
+function xdot = f(x,u)
+v=x(4);
+psi=x(5);theta=x(6);phi=x(7);
+xdot=[v*cos(theta)*cos(psi);
+      v*cos(theta)*sin(psi);
+      -v*sin(theta);
+      u(1);
+      (sin(phi)/cos(theta))*v*u(2)+(cos(phi)/cos(theta))*v*u(3);
+      cos(phi)*v*u(2)-sin(phi)*v*u(3);
+      -0.1*sin(phi)+tan(theta)*v*(sin(phi)*u(2)+cos(phi)*u(3))
+      ];
+end
